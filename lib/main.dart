@@ -4,6 +4,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+import 'StarWarsCard.dart';
+
 void main() => runApp(MaterialApp(
   home: StarWarsData(),
 ));
@@ -45,26 +47,8 @@ class StarWarsState extends State<StarWarsData> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      Card(
-                        child: Container(
-                          padding: EdgeInsets.all(15.0),
-                          child: Text(data[index]["name"],
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            color: Colors.black54
-                          ))
-                        ),
-                      ),
-                      Card(
-                        child: Container(
-                            padding: EdgeInsets.all(15.0),
-                          child: Text(data[index]["model"],
-                           style: TextStyle(
-                             fontSize: 18.0,
-                             color: Colors.black54
-                           ))
-                        ),
-                      ),
+                      StarWarsCard(data[index]["name"]).build(),
+                      StarWarsCard(data[index]["model"]).build(),
                     ],
                 ),
               ),
