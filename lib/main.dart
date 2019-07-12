@@ -38,6 +38,14 @@ class StarWarsState extends State<StarWarsData> {
       appBar: AppBar(
         title: Text("Star Wars Starships"),
         backgroundColor: Colors.amberAccent,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () {
+              Navigator.push(ctx, Tuto2());
+            },
+          )
+        ],
       ),
       body: ListView.builder(
           itemCount: data == null ? 0 : data.length,
@@ -53,7 +61,8 @@ class StarWarsState extends State<StarWarsData> {
                 ),
               ),
             );
-          })
+          }),
+
     );
   }
 
@@ -62,4 +71,27 @@ class StarWarsState extends State<StarWarsData> {
     super.initState();
     this.getSWData();
   }
+}
+
+class Tuto2 extends MaterialPageRoute<Null>
+{
+  Tuto2() : super( builder: (BuildContext ctx) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Tuto 2"),
+        backgroundColor: Theme
+            .of(ctx)
+            .accentColor,
+        elevation: 2.0,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.close),
+            onPressed: () {
+              Navigator.pop(ctx);
+            },
+          )
+        ],
+      ),
+    );
+  });
 }
