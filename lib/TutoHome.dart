@@ -48,7 +48,7 @@ class TutoHomeState extends State<TutoHome> with SingleTickerProviderStateMixin 
           backgroundColor: Colors.red,
           bottom: makeTabBar(),
         ),
-        body: makeTabBarView(<Widget>[TheGridView().build(), SimpleWidget()]),
+        body: makeTabBarView(<Widget>[TheGridView().build(context), SimpleWidget()]),
       ),
     );
   }
@@ -113,7 +113,7 @@ class SimpleWidgetState extends State<SimpleWidget> {
 }
 
 class TheGridView {
-  GridView build() {
+  GridView build(BuildContext context) {
     return GridView.count(
         primary: true,
         padding: EdgeInsets.all(1.0),
@@ -122,12 +122,12 @@ class TheGridView {
         mainAxisSpacing: 1.0,
         crossAxisSpacing: 1.0,
         children: <Widget>[
-          TutoGridCell("Home", Icons.home, '/'),
-          TutoGridCell("Email", Icons.email,'/'),
-          TutoGridCell("Chat", Icons.chat_bubble, '/'),
-          TutoGridCell("News", Icons.new_releases, '/'),
-          TutoGridCell("Network", Icons.network_wifi, '/'),
-          TutoGridCell("Options", Icons.settings, '/'),
+          TutoGridCell(context, "StarWars", Icons.home, '/starwars'),
+          TutoGridCell(context, "Email", Icons.email,'/'),
+          TutoGridCell(context, "Chat", Icons.chat_bubble, '/'),
+          TutoGridCell(context, "News", Icons.new_releases, '/'),
+          TutoGridCell(context, "Network", Icons.network_wifi, '/'),
+          TutoGridCell(context, "Options", Icons.settings, '/'),
         ]);
   }
 }

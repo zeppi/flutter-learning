@@ -7,23 +7,20 @@ import 'package:http/http.dart' as http;
 import 'StarWarsCard.dart';
 import 'TutoHome.dart';
 
-void main()=> runApp(MaterialApp(
-  home: TutoHome(),
-  routes: <String, WidgetBuilder> {
-    '/star_wars': (BuildContext ctx) => StarWarsData()
+void main()=> runApp(ExoApp());
+
+class ExoApp extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+        title: 'Exo',
+        routes: {
+        '/': (context) => TutoHome(),
+        '/starwars': (context) => StarWarsData()
+        });
   }
-));
-
-/*
-void main() => runApp(MaterialApp(
-  home: StarWarsData(),
-  routes: <String, WidgetBuilder> {
-    '/tuto_001' : (BuildContext ctx) => StarWarsData(),
-    '/tuto_002' : (BuildContext ctx) => Tuto2(),
-  },
-));
-*/
-
+}
 class StarWarsData extends StatefulWidget {
   @override
   StarWarsState createState() => StarWarsState();
