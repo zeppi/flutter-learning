@@ -5,13 +5,11 @@ class TutoGridCell extends StatelessWidget
   final String _route;
   final String _name;
   final IconData _icon;
-  final BuildContext _ctx;
 
   const TutoGridCell(
-      this._ctx,
       this._name,
       this._icon,
-      this._route );
+      this._route, { Key key }) : super(key: key);
 
   @override
   Widget build(BuildContext ctx) {
@@ -20,7 +18,7 @@ class TutoGridCell extends StatelessWidget
       child: InkWell(
         splashColor: Colors.blue.withAlpha(30),
         onTap: () {
-          Navigator.pushNamed(_ctx, _route);
+          Navigator.pushNamed(ctx, _route);
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

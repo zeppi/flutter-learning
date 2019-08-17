@@ -40,7 +40,7 @@ class TutoHomeState extends State<TutoHome> with SingleTickerProviderStateMixin 
           bottom: makeTabBar(),
         ),
         body: makeTabBarView(<Widget>[
-          TheHomeGridView().build(context),
+          TheHomeGridView(),
           JustAWizard()]),
       ),
     );
