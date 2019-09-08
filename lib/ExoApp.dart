@@ -6,18 +6,13 @@
 //
 import 'package:flutter/material.dart';
 
-import 'TutoHome.dart';
-import 'StarWars.dart';
-
-class ExoApp extends StatelessWidget
+class ExoApp extends InheritedWidget
 {
+  ExoApp({@required Widget child}) : super(child: child);
+
+  static ExoApp of(BuildContext context) =>
+      context.inheritFromWidgetOfExactType(ExoApp);
+
   @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-        title: 'Exo',
-        routes: {
-          '/': (context) => TutoHome(),
-          '/starwars': (context) => StarWarsData()
-        });
-  }
+  bool updateShouldNotify(InheritedWidget oldWidget) => false;
 }

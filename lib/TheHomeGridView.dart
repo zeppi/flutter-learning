@@ -10,6 +10,12 @@ import 'appWidgets/TutoGridCell.dart';
 
 class TheHomeGridView extends StatelessWidget
 {
+  final BuildContext _routes_context;
+
+  const TheHomeGridView(
+      this._routes_context,
+      { Key key }) : super(key: key);
+
   @override
   GridView build(BuildContext context) {
     return GridView.count(
@@ -20,12 +26,12 @@ class TheHomeGridView extends StatelessWidget
         mainAxisSpacing: 1.0,
         crossAxisSpacing: 1.0,
         children: <Widget>[
-          TutoGridCell("StarWars", Icons.home, '/starwars'),
-          TutoGridCell("Email", Icons.email,'/'),
-          TutoGridCell("Chat", Icons.chat_bubble, '/'),
-          TutoGridCell("News", Icons.new_releases, '/'),
-          TutoGridCell("Network", Icons.network_wifi, '/'),
-          TutoGridCell("Options", Icons.settings, '/'),
+          TutoGridCell(_routes_context, "StarWars", Icons.home, '/starwars'),
+          TutoGridCell(_routes_context, "Email", Icons.email,'/'),
+          TutoGridCell(_routes_context, "Chat", Icons.chat_bubble, '/'),
+          TutoGridCell(_routes_context, "News", Icons.new_releases, '/'),
+          TutoGridCell(_routes_context, "Network", Icons.network_wifi, '/'),
+          TutoGridCell(_routes_context, "Options", Icons.settings, '/'),
         ]);
   }
 }

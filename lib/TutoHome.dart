@@ -33,14 +33,14 @@ class TutoHomeState extends State<TutoHome> with SingleTickerProviderStateMixin 
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
           bottom: makeTabBar(),
         ),
         body: makeTabBarView(<Widget>[
-          TheHomeGridView(),
+          TheHomeGridView(context),
           JustAWizard()]),
       ),
     );
