@@ -27,7 +27,7 @@ class TheHomeGridView extends StatelessWidget
         crossAxisSpacing: 1.0,
         children: <Widget>[
           TutoGridCell(_routes_context, "StarWars", Icons.home, '/starwars'),
-          TutoGridCell(_routes_context, "Email", Icons.email,'/'),
+          TutoGridCell(_routes_context, "Tweening", Icons.email,'/tweening'),
           TutoGridCell(_routes_context, "Chat", Icons.chat_bubble, '/'),
           TutoGridCell(_routes_context, "News", Icons.new_releases, '/'),
           TutoGridCell(_routes_context, "Network", Icons.network_wifi, '/'),

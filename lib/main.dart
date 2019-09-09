@@ -12,10 +12,12 @@ import 'ExoApp.dart';
 
 import 'TutoHome.dart';
 import 'StarWars.dart';
+import 'Tweening.dart';
 
 void main()=> runApp(ExoApp(child: new MaterialApp(
     title: 'Exo',
     routes: {
       '/': (_) => TutoHome(),
-      '/starwars': (_) => StarWarsData()
+      '/starwars': (_) => StarWarsData(),
+      '/tweening': (_) => Tweening()
     }),));
