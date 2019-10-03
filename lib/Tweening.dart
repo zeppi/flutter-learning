@@ -98,7 +98,7 @@ class MyAnimation extends AnimatedWidget {
                   offset: new Offset(1.0, 0.0),
                 ),
               ]),
-        );,
+            ),
           ],
         ),
       ),
