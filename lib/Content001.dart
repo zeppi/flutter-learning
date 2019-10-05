@@ -20,6 +20,11 @@ class Content001 extends StatefulWidget {
 }
 
 class _Content001 extends State<Content001> {
+  var selectedValue;
+
+  _Content001(){
+    this.selectedValue = 5.0;
+  }
 
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -64,11 +69,12 @@ class _Content001 extends State<Content001> {
                             min: 0.0,
                             max: 100.0,
                             divisions: 5,
-                            value: 2,
+                            value: selectedValue,
                             activeColor: Color(0xffe05f2c),
                             inactiveColor: Colors.blueGrey,
                             onChanged: (newValue) {
                               setState(() {
+                                selectedValue = newValue;
                                 print(newValue);
                               });
                             },
